@@ -12,6 +12,22 @@ npm run dev
 
 La build di produzione viene generata in `src/casadipilloapp/dist` con `npm run build` eseguito dalla directory dell'app.
 
+## Immagini
+
+Gli originali sono conservati in `src/casadipilloapp/src/assets/images`. Le versioni WebP ottimizzate per il web sono generate in `src/casadipilloapp/src/assets/optimized`:
+
+- `carousel`: larghezza massima 640 px, per le strisce fotografiche e i dispositivi mobili
+- `slideshow`: larghezza massima 1600 px, per hero e lightbox
+
+Per rigenerarle dopo aver aggiunto o sostituito immagini:
+
+```bash
+cd src/casadipilloapp
+npm run optimize:images
+```
+
+Lo script Python richiede Pillow (`python -m pip install -r requirements-images.txt`) e mantiene invariati i file originali.
+
 ## GitHub Pages
 
 Il workflow `.github/workflows/deploy-pages.yml` pubblica automaticamente ogni push su `main`. Nel repository GitHub va impostato **Settings > Pages > Source: GitHub Actions**. Il dominio personalizzato `lacasadipillo.it` può essere finalizzato nelle impostazioni Pages e tramite DNS.

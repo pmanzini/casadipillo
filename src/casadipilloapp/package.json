@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images": "python ../../scripts/optimize_images.py --source src/assets/images --output src/assets/optimized"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
